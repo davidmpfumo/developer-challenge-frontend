@@ -1,0 +1,74 @@
+    <div class="container">
+           
+        <table>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary">
+                        <a style="cursor: pointer" (click)="exportexcel()">
+                        Exportar Excel
+                      </a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary">
+                            <a style="cursor: pointer" (click)="exportcsv()">
+                                Exportar CSV
+                              </a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary">
+                            <a style="cursor: pointer" (click)="exportcsv()">
+                                Exportar XML
+                              </a>
+                    </button>
+                </td>
+                <td>
+                    <div class="col-md-8">
+                    <div class="input-group mb-4">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="pesquisar pelo nome"
+                        [(ngModel)]="name"/>
+                      <div class="input-group-append">
+                        <button
+                          class="btn btn-outline-secondary"
+                          type="button"
+                          (click)="searchByName()">
+                          Pesquisar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+        </table>
+
+        <table id="excel-table" class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row">Nome</th>
+                    <th scope="row">Capital</th>
+                    <th scope="row">Regiao</th>
+                    <th scope="row">Sub-regiao</th>
+                    <th scope="row">Populacao</th>
+                    <th scope="row">Area</th>
+                    <th scope="row">Fuso Horario</th>
+                    <th scope="row">Nome Nativo</th>
+                    <th scope="row">Link da Bandeira</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cvar of listaPaises">
+                    <td>{{cvar.name}}</td>
+                    <td>{{cvar.capital}}</td>
+                    <td>{{cvar.region}}</td>
+                   <td>{{cvar.subregion}}</td> 
+                   <td>{{cvar.population}}</td>
+                    <td>{{cvar.area}}</td>
+                    <td>{{cvar.timezones[0]}}</td>
+                   <td>{{cvar.nativeName}}</td> 
+                   <td><a href="{{cvar.flag}}">{{cvar.flag}}</a></td>
+                 </tr>
+            </tbody>
+        </table>
+    </div>
