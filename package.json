@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "ng build --configuration"
   },
   "private": true,
   "dependencies": {
@@ -38,7 +38,8 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "xlsx": "^0.16.9",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "typescript": "~4.1.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.0.1",
